@@ -1,0 +1,29 @@
+{
+  "name": "smoothie.macos.extension",
+  "version": "1.0.0",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "build-main": "tsc -p src/main/tsconfig.main.json",
+    "build-renderer": "cd config && ng build --configuration=development --output-path=../dist/renderer",
+    "build-renderer-prod": "cd config && ng build --configuration=production --output-path=../dist/renderer",
+    "build": "npm run build-main && npm run build-renderer",
+    "start": "npm run build && electron .",
+    "watch": "ng build --watch",
+    "electron": "electron .",
+    "electron-build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.7",
+    "@angular/cli": "18.2.7",
+    "electron": "32.1.2",
+    "electron-builder": "25.1.7"
+  },
+  "dependencies": {
+    "@angular/core": "18.2.7",
+    "@angular/platform-browser": "18.2.7",
+    "@angular/platform-browser-dynamic": "18.2.7",
+    "@angular/router": "18.2.7",
+    "zone.js": "^0.15.0"
+  }
+}

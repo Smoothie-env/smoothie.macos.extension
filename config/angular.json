@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "projects": {
+    "smoothie.macos.extension.ui": {
+      "projectType": "application",
+      "root": "../src/renderer",
+      "sourceRoot": "../src/renderer/src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "../dist/renderer",
+            "index": "../src/renderer/src/index.html",
+            "main": "../src/renderer/src/main.ts",
+            "tsConfig": "../src/renderer/tsconfig.app.json",
+            "polyfills": "../src/renderer/src/polyfills.ts",
+            "assets": [
+              "../src/renderer/src/public/favicon.ico",
+              "../src/renderer/src/assets"
+            ],
+            "styles": [
+              "../src/renderer/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "../src/renderer/src/environments/environment.ts",
+                  "with": "../src/renderer/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "../src/renderer/src/environments/environment.ts",
+                  "with": "../src/renderer/src/environments/environment.ts"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "none",
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": false,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
