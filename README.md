@@ -7,7 +7,7 @@ An Electron application with an Angular frontend for the Smoothie macOS extensio
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Smoothie-env/smoothie.macos.extension.git
+   git@github.com:Smoothie-env/smoothie.macos.extension.git
    cd smoothie.macos.extension
 
 2. **Install dependencies:**
